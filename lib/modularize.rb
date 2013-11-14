@@ -1,2 +1,2 @@
 require "modularize/version"
-require 'modularize/modulize'
+require "modularize/modularize"
