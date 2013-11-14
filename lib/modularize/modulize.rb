@@ -1,10 +1,20 @@
 class Modulize
-  def self.create(name)
-    new_module = Object.const_defined?(name) ? Object.const_get(name) : nil
+  def self.create(path, root = Object)
+    path.split('::').each do |name|
+      root = create_module(name, root)
+    end
+  end
+
+  private
+
+  def self.create_module(name, root)
+    new_module = root.const_defined?(name) ? root.const_get(name) : nil
 
     unless nil
       new_module = Module.new
-      Object.const_set name, new_module
+      root.const_set name, new_module
     end
+
+    new_module
   end
 end
