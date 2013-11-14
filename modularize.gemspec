@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Modularize::VERSION
   spec.authors       = ["Gavin Joyce"]
   spec.email         = ["gavinjoyce@gmail.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = %q{Dynamically create module hierarchies}
+  spec.summary       = %q{Dynamically create module hierarchies...}
   spec.homepage      = ""
   spec.license       = "MIT"
 
