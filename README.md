@@ -1,6 +1,47 @@
 # Modularize
 
-TODO: Write a gem description
+Dynamically create Ruby module hierarchies
+
+```ruby
+Modulize.create('Animals::Cats::Bombay')
+```
+
+is the equivelent of:
+
+```ruby
+module Animals
+  module Cats
+    module Bombay
+    end
+  end
+end
+```
+
+## But Why?
+
+In [RestPack](https://github.com/restpack), I want to create some modules at load time so that I don't need to nest class definitions in module namespaces. I want to be able to do this:
+
+```ruby
+module Commands::Groups::Invitation
+  class Create
+    ..
+  end
+end
+```
+
+instead of this:
+
+```ruby
+module Commands
+  module Groups
+    module Invitation
+      class Create
+        ..
+      end
+    end
+  end
+end
+```
 
 ## Installation
 
@@ -15,10 +56,6 @@ And then execute:
 Or install it yourself as:
 
     $ gem install modularize
-
-## Usage
-
-TODO: Write usage instructions here
 
 ## Contributing
 
