@@ -6,7 +6,7 @@ Dynamically create Ruby module hierarchies
 Modulize.create('Animals::Cats::Bombay')
 ```
 
-is the equivelent of:
+is the equivelent to:
 
 ```ruby
 module Animals
