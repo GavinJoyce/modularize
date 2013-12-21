@@ -35,4 +35,18 @@ describe Modularize do
     Modularize.create('Fruit')
     defined?(Fruit::Orange).should_not == nil
   end
+
+  context 'when a decendant module name already exists on the root' do
+    it 'creates a decendant module in the correct namespace' do
+      defined?(Computers::Keyboards).should == nil
+      Modularize.create('Keyboards')
+      Modularize.create('Computers::Keyboards')
+      defined?(Computers::Keyboards).should_not == nil
+    end
+
+    after do
+      Object.send(:remove_const, :Computers) if defined?(Computers)
+      Object.send(:remove_const, :Keyboards) if defined?(Keyboards)
+    end
+  end
 end

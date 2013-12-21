@@ -8,7 +8,7 @@ module Modularize
   private
 
   def self.create_module(name, root)
-    new_module = root.const_defined?(name) ? root.const_get(name) : nil
+    new_module = root.const_defined?(name, false) ? root.const_get(name) : nil
 
     unless new_module
       new_module = Module.new
