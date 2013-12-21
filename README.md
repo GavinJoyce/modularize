@@ -43,6 +43,8 @@ module Commands
 end
 ```
 
+Watch a video of the gem creation: http://www.youtube.com/watch?v=JR3tlXae73k
+
 ## Installation
 
 Add this line to your application's Gemfile:
